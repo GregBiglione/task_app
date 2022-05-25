@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:task_app/model/task.dart';
+import 'package:task_app/widget/task_grid.dart';
 
 class TaskList extends StatelessWidget {
-  final tasks = Task.generateTasks();
-  //const TaskList({Key? key}) : super(key: key);
+  const TaskList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Text("Tasks list");
+    return TaskGrid();
   }
 }
