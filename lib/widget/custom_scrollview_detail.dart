@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_app/model/task.dart';
 import 'package:task_app/utils/date_picker.dart';
+import 'package:task_app/widget/detail_task_title.dart';
 
 class CustomScrollViewDetail extends StatelessWidget {
   final Task task;
@@ -24,6 +25,7 @@ class CustomScrollViewDetail extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DatePicker(),
+                DetailTaskTitle(),
               ],
             ),
           ),
