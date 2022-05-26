@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_app/model/task.dart';
+import 'package:task_app/utils/date_picker.dart';
 
 class CustomScrollViewDetail extends StatelessWidget {
   final Task task;
@@ -10,6 +11,23 @@ class CustomScrollViewDetail extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         _buildSliver(context),
+        SliverToBoxAdapter(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                DatePicker(),
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }
