@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_app/model/task.dart';
 import 'package:task_app/model/task.dart';
+import 'package:task_app/widget/custom_scrollview_detail.dart';
 
 class Detail extends StatelessWidget {
   final Task task;
@@ -9,8 +10,9 @@ class Detail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Detail"),
+      backgroundColor: Colors.black,
+      body: CustomScrollView(
+        slivers: [],
       ),
     );
   }
