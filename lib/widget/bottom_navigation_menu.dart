@@ -25,6 +25,11 @@ class BottomNavigationMenu extends StatelessWidget {
           topRight: Radius.circular(30),
         ),
         child: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          selectedItemColor: Colors.blueAccent,
+          unselectedItemColor: Colors.grey.withOpacity(0.5),
           items: [
             BottomNavigationBarItem(
               label: "Home",
