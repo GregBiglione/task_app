@@ -11,9 +11,7 @@ class Detail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: CustomScrollView(
-        slivers: [],
-      ),
+      body: CustomScrollViewDetail(task: task),
     );
   }
 }
