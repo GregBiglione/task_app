@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_app/model/task.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:task_app/screen/detail/detail.dart';
 
 class TaskGrid extends StatelessWidget {
   final tasks = Task.generateTasks();
@@ -44,37 +45,46 @@ class TaskGrid extends StatelessWidget {
   }
 
   Widget _buildTask(BuildContext context, Task task){
-    return Container(
-      padding: EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        color: task.bgColor,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(
-            task.iconData,
-            color: task.iconColor,
-            size: 35,
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+              builder: (context) => Detail(task: task),
           ),
-          SizedBox(height: 30,),
-          Text(
-            task.title!,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.all(15),
+        decoration: BoxDecoration(
+          color: task.bgColor,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(
+              task.iconData,
+              color: task.iconColor,
+              size: 35,
             ),
-          ),
-          SizedBox(height: 20,),
-          Row(
-            children: [
-              _buildTaskStatus(task.btnColor!, task.iconColor!, "${task.left} left"),
-              SizedBox(width: 5),
-              _buildTaskStatus(Colors.white, task.iconColor!, "${task.done} done"),
-            ],
-          ),
-        ],
+            SizedBox(height: 30,),
+            Text(
+              task.title!,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 20,),
+            Row(
+              children: [
+                _buildTaskStatus(task.btnColor!, task.iconColor!, "${task.left} left"),
+                SizedBox(width: 5),
+                _buildTaskStatus(Colors.white, task.iconColor!, "${task.done} done"),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
