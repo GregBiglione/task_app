@@ -30,13 +30,13 @@ List<Task> tasks = [
         "time": "11:00 am",
         "title": "",
         "slot": "",
-        "timelineTileColor": Colors.grey.withOpacity(0.3),
+        "timelineTileColor": blueDark,
       },
       {
         "time": "12:00 am",
         "title": "",
         "slot": "",
-        "timelineTileColor": blueDark,
+        "timelineTileColor": Colors.grey.withOpacity(0.3),
       },
       {
         "time": "1:00 pm",
