@@ -11,6 +11,53 @@ List<Task> tasks = [
     btnColor: yellow,
     left: 3,
     done: 1,
+    description: [
+      {
+        "time": "9:00 am",
+        "title": "Go for a walk with the dog",
+        "slot": "9:00 - 10:00 am",
+        "timelineTileColor": redDark,
+        "bgColor": redLight,
+      },
+      {
+        "time": "10:00 am",
+        "title": "Go to the gym",
+        "slot": "10:00 - 12:00 am",
+        "timelineTileColor": blueDark,
+        "bgColor": blueLight,
+      },
+      {
+        "time": "11:00 am",
+        "title": "",
+        "slot": "",
+        "timelineTileColor": Colors.grey.withOpacity(0.3),
+      },
+      {
+        "time": "12:00 am",
+        "title": "",
+        "slot": "",
+        "timelineTileColor": blueDark,
+      },
+      {
+        "time": "1:00 pm",
+        "title": "Call with client",
+        "slot": "1:00 - 2:00 pm",
+        "timelineTileColor": yellowDark,
+        "bgColor": yellowLight,
+      },
+      {
+        "time": "2:00 pm",
+        "title": "",
+        "slot": "",
+        "timelineTileColor": Colors.grey.withOpacity(0.3),
+      },
+      {
+        "time": "3:00 pm",
+        "title": "",
+        "slot": "",
+        "timelineTileColor": Colors.grey.withOpacity(0.3),
+      }
+    ]
   ),
   Task(
       iconData: Icons.cases_rounded,

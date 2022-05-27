@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_app/model/task.dart';
 import 'package:task_app/utils/date_picker.dart';
 import 'package:task_app/widget/detail_task_title.dart';
+import 'package:task_app/widget/task_timeline.dart';
 
 class CustomScrollViewDetail extends StatelessWidget {
   final Task task;
@@ -9,6 +10,8 @@ class CustomScrollViewDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final detailList = task.description;
+
     return CustomScrollView(
       slivers: [
         _buildSliver(context),
@@ -29,6 +32,27 @@ class CustomScrollViewDetail extends StatelessWidget {
               ],
             ),
           ),
+        ),
+        detailList == null ?
+        SliverFillRemaining(
+          child: Container(
+            color: Colors.white,
+            child: Center(
+              child: Text(
+                "No task today",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+          ),
+        ):
+        SliverList(
+            delegate: SliverChildBuilderDelegate(
+                    (_, index) => TaskTimeline(detail: detailList[index]),
+                    childCount: detailList.length,
+            ),
         ),
       ],
     );

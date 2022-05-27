@@ -9,6 +9,7 @@ class Task {
   Color? btnColor;
   num? left;
   num? done;
+  List<Map<String, dynamic>>? description;
   bool? isLast;
 
   Task({
@@ -19,6 +20,7 @@ class Task {
     this.btnColor,
     this.left,
     this.done,
+    this.description,
     this.isLast = false
   });
 
